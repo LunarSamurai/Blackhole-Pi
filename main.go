@@ -356,16 +356,101 @@ func defaultConfig() Config {
 			"8.8.8.8:53", // Google
 		},
 		BlocklistURLs: []string{
-			// Steven Black's unified hosts — comprehensive and well-maintained
-			"https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+			// ===== UNIFIED / COMPREHENSIVE =====
+			// Steven Black's unified hosts (ads + malware + fakenews + gambling + social)
+			"https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts",
+			// OISD - one of the most comprehensive, curated blocklists
+			"https://big.oisd.nl/domainswild",
+
+			// ===== ADVERTISING =====
 			// AdGuard DNS filter
 			"https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
-			// Pete Lowe's ad/tracking server list
+			// Pete Lowe's ad/tracking servers
 			"https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext",
-			// Malware domain list
-			"https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/malware",
-			// Tracking domains
+			// AdAway default blocklist
+			"https://adaway.org/hosts.txt",
+			// Dan Pollock's hosts file
+			"https://someonewhocares.org/hosts/zero/hosts",
+			// Winhelp ad servers
+			"https://winhelp2002.mvps.org/hosts.txt",
+			// EasyList (ads)
+			"https://v.firebog.net/hosts/Easylist.txt",
+			// AdGuard Mobile Ads filter
+			"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_11_Mobile/filter.txt",
+			// Admiral (anti-adblock) domains
+			"https://v.firebog.net/hosts/Admiral.txt",
+			// Anudeep's blacklist (ads)
+			"https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt",
+			// Yoyo ads
+			"https://pgl.yoyo.org/adservers/serverlist.php?hostformat=nohtml&showintro=0&mimetype=plaintext",
+			// Disconnect.me ads
+			"https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt",
+
+			// ===== TRACKING / TELEMETRY =====
+			// EasyPrivacy (tracking)
 			"https://v.firebog.net/hosts/Easyprivacy.txt",
+			// Disconnect.me tracking
+			"https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt",
+			// Lightswitch05 Ads & Tracking
+			"https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt",
+			// Prigent Ads
+			"https://v.firebog.net/hosts/Prigent-Ads.txt",
+			// Prigent Crypto (cryptomining)
+			"https://v.firebog.net/hosts/Prigent-Crypto.txt",
+			// Windows Spy Blocker (telemetry)
+			"https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt",
+			// Perflyst Smart TV tracking
+			"https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt",
+			// Perflyst Android tracking
+			"https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracking.txt",
+			// NoTracking hosts blocklist
+			"https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt",
+			// Anudeep's Facebook tracking
+			"https://raw.githubusercontent.com/anudeepND/blacklist/master/facebook.txt",
+			// Geoffrey Frogeye first-party trackers
+			"https://hostfiles.frogeye.fr/firstparty-trackers-hosts.txt",
+
+			// ===== MALWARE / PHISHING / RANSOMWARE =====
+			// RPiList malware
+			"https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/malware",
+			// RPiList phishing
+			"https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Phishing-Angriffe",
+			// DandelionSprout's Anti-Malware
+			"https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt",
+			// URLhaus malware distribution
+			"https://urlhaus.abuse.ch/downloads/hostfile/",
+			// Phishing Army
+			"https://phishing.army/download/phishing_army_blocklist_extended.txt",
+			// Mandiant APT threat domains
+			"https://v.firebog.net/hosts/Prigent-Malware.txt",
+			// Abuse.ch ThreatFox
+			"https://threatfox.abuse.ch/downloads/hostfile/",
+			// VeleSila threat intelligence
+			"https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts",
+			// Quidsup NoTrack Malware
+			"https://gitlab.com/quidsup/notrack-blocklists/-/raw/master/notrack-malware.txt",
+			// FadeMind add.Risk
+			"https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Risk/hosts",
+			// FadeMind add.Spam
+			"https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts",
+			// Shallalist spam
+			"https://v.firebog.net/hosts/Shalla-mal.txt",
+
+			// ===== SUSPICIOUS / NEWLY REGISTERED DOMAINS =====
+			// Lightswitch05 hate & junk
+			"https://www.github.developerdan.com/hosts/lists/hate-and-junk-extended.txt",
+			// Lightswitch05 dating services
+			"https://www.github.developerdan.com/hosts/lists/dating-services-extended.txt",
+
+			// ===== COIN MINERS / CRYPTO JACKING =====
+			// ZeroDot1 CoinBlocker
+			"https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser",
+
+			// ===== SCAM / FRAUD =====
+			// Lightswitch05 amp-hosts (Google AMP tracking)
+			"https://www.github.developerdan.com/hosts/lists/amp-hosts-extended.txt",
+			// DigitalSide Threat-Intel
+			"https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt",
 		},
 		WhitelistFile: "/etc/pi-adblock/whitelist.txt",
 		LogFile:       "/var/log/pi-adblock.log",
