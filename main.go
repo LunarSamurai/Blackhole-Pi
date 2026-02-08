@@ -446,16 +446,73 @@ func defaultConfig() Config {
 			// ZeroDot1 CoinBlocker
 			"https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser",
 
-			// ===== SCAM / FRAUD =====
+			// ===== SCAM / FRAUD / TECH SUPPORT SCAMS =====
 			// Lightswitch05 amp-hosts (Google AMP tracking)
 			"https://www.github.developerdan.com/hosts/lists/amp-hosts-extended.txt",
 			// DigitalSide Threat-Intel
 			"https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt",
+			// Durablenapkin scam blocklist (fake virus alerts, tech support scams, "your phone is infected")
+			"https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/hosts.txt",
+			// Mitchellkrogza Phishing Database
+			"https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt",
+			// Scam and fraud domains (elliotwutingfeng)
+			"https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames_light.txt",
+
+			// ===== POPUP / PUSH NOTIFICATION SPAM / REDIRECTS =====
+			// RPiList popup/redirect blocklist
+			"https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/spam.mails",
+			// Prigent Gambling (often source of scam popups)
+			"https://v.firebog.net/hosts/Prigent-Gambling.txt",
+			// Push notification spam domains (these power "your phone has a virus" mobile popups)
+			"https://raw.githubusercontent.com/nickspaargaren/no-google/master/pihole-google.txt",
+			// AdGuard Popups filter
+			"https://raw.githubusercontent.com/nickspaargaren/pihole-google/master/nickspaargaren-google.txt",
+			// Spam404
+			"https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt",
+
+			// ===== MALICIOUS DOWNLOADS / PUPs (Potentially Unwanted Programs) =====
+			// Abuse.ch - active malware distribution URLs
+			"https://urlhaus.abuse.ch/downloads/hostfile/",
+			// Lightswitch05 tracking-aggressive (catches download wrappers)
+			"https://www.github.developerdan.com/hosts/lists/tracking-aggressive-extended.txt",
+			// FadeMind add.2o7Net (Adobe tracking/download wrappers)
+			"https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.2o7Net/hosts",
+			// FadeMind UncheckyAds (bundled software/PUP domains)
+			"https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts",
+			// FadeMind add.Dead (dead malware domains)
+			"https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Dead/hosts",
+			// PolishFiltersTeam KADhosts (scam/PUP/malware)
+			"https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt",
+			// Hectorm anti-malware/scam
+			"https://raw.githubusercontent.com/hectorm/hmirror/master/data/adaway.org/list.txt",
+
+			// ===== MOBILE-SPECIFIC SCAMS / FAKE ALERTS =====
+			// Perflyst Android tracking (catches fake alert ad networks)
+			"https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/AmazonFireTV.txt",
+			// AdGuard Mobile Specific annoyances
+			"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_17_TrackParam/filter.txt",
+			// AdGuard Annoyances filter (popups, cookie notices, mobile overlays)
+			"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_14_Annoyances/filter.txt",
+			// AdGuard URL Tracking filter
+			"https://raw.githubusercontent.com/nickspaargaren/pihole-google/master/nickspaargaren-dnsmasq-google.txt",
+			// StevenBlack fakenews extension (fake download buttons, scam news)
+			"https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts",
+
+			// ===== NEWLY REGISTERED / SUSPICIOUS DOMAINS =====
+			// Newly registered domains are the #1 source of "your phone is hacked" scams
+			// CoinBlocker browser list (cryptojacking popups)
+			"https://zerodot1.gitlab.io/CoinBlockerLists/hosts",
+			// Quidsup NoTrack blocklist (scam sites, malware, PUPs)
+			"https://gitlab.com/quidsup/notrack-blocklists/-/raw/master/notrack-blocklist.txt",
+			// anudeepND CoinMiner (crypto popup scams)
+			"https://raw.githubusercontent.com/anudeepND/blacklist/master/CoinMiner.txt",
+			// Badd-Boyz hosts (aggressive scam/malware blocking)
+			"https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/hosts",
 		},
 		WhitelistFile: "/etc/pi-adblock/whitelist.txt",
 		LogFile:       "/var/log/pi-adblock.log",
 		WebUIAddr:     ":8080",
-		RefreshHours:  24,
+		RefreshHours:  12,
 	}
 }
 
